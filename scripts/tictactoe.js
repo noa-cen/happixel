@@ -46,8 +46,9 @@ function buildBoard() {
 function checkDraw(countTurns) {
     if (countTurns == 9) {
         message.innerHTML = "Match nul !"
-        return
+        return true
     }
+    return false
 }
 
 function checkWin(currentPlayerChoices, currentPlayer) {
@@ -61,6 +62,43 @@ function checkWin(currentPlayerChoices, currentPlayer) {
 }
 
 function computerPlay() {
+    if (defenseComputerMove(player1Choices ,player2Choices) === false) {
+        randomComputerMove()
+    }
+
+    if (checkWin(player2Choices , player2)) {
+        gameOver = true
+        return
+    } 
+    
+    countTurns++
+    if (checkDraw(countTurns)) {
+        gameOver = true
+        return
+    }
+
+    message.innerHTML = `Joueur: ${player1}`  
+    currentPlayer = player1
+}
+
+function defenseComputerMove(player1Choices ,player2Choices) {
+    for (let combo of wins) {
+        let playerCount = combo.filter(num => player1Choices.includes(num)).length
+        let emptySpot = combo.find(num => !player1Choices.includes(num) && !player2Choices.includes(num))
+
+        if (playerCount === 2 && emptySpot !== undefined) {
+            let square = document.getElementById(emptySpot)
+            if (square) {
+                square.innerHTML = player2
+                player2Choices.push(emptySpot)
+                return true
+            }
+        }
+    }
+    return false
+}
+
+function randomComputerMove() {
     let emptySquares = []
     squares.forEach((square) => {
         if (square.textContent === "") {
@@ -69,23 +107,12 @@ function computerPlay() {
     })
     let i = Math.floor(Math.random() * emptySquares.length)
 
+    if (emptySquares.length === 0) {
+        return
+    }
+
     emptySquares[i].innerHTML = player2
     player2Choices.push(Number(emptySquares[i].id))
-
-    if (checkWin(player2Choices , player2)) {
-        gameOver = true
-        return
-    } 
-    else {
-        message.innerHTML = `Joueur: ${player1}`
-    }
-    countTurns++
-    checkDraw(countTurns)
-    currentPlayer = player1
-}
-
-function defenseComputer(player1Choices ,player2Choices) {
-    
 }
 
 function turnGame(event) {
@@ -114,8 +141,11 @@ function turnGame(event) {
         }
     }
 
-    countTurns++;
-    checkDraw(countTurns);
+    countTurns++
+    if (checkDraw(countTurns)) {
+        gameOver = true
+        return
+    }
 
     if (gameMode === "1") {
         currentPlayer = player2;
