@@ -1,29 +1,44 @@
 /* Color palette */
-/* green 
-:root {
-    --primary: #A9C167;
-    --secondary: #526D66;
-    --tertiary: #2A413A;
-} */
-/* brown
-:root {
-    --primary: #443A30;
-    --secondary: #8B8170;
-    --tertiary: #A9845A;
-}  */
-
-/* blue
-:root {
-    --primary: #1C3349;
-    --secondary: #517589;
-    --tertiary: #467593;
-} */
-
-/* blue/orange */
 :root {
     --primary: #1B335B;
     --secondary: #42638A;
     --tertiary: #D78C35;
+}
+
+.orange {
+    --primary: #1B335B;
+    --secondary: #42638A;
+    --tertiary: #D78C35;
+}
+
+.green {
+    --primary: #154043;
+    --secondary: #518688;
+    --tertiary: #9FCA5F;
+} 
+
+.brown {
+    --primary: #39373C;
+    --secondary: #76757C;
+    --tertiary: #B2A38C;
+}
+
+.blue {
+    --primary: #39322F;
+    --secondary: #746B66;
+    --tertiary: #1991C8;
+}
+
+.white {
+    --primary: #081718;
+    --secondary: #273F3F;
+    --tertiary: #EAEAEA;
+}
+
+.dark {
+    --primary: #FFFFFF;
+    --secondary: #D5D5D5;
+    --tertiary: #132425;
 }
 
 /* Font-police:
@@ -82,9 +97,9 @@ header {
             justify-content: center;
             background-color: var(--primary);
             width: 99%;
-            height: 95%;
+            height: 100%;
             position: absolute;
-            top : 10px;
+            top: 100px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
@@ -93,6 +108,10 @@ header {
             a {
                 color: var(--tertiary);
                 font-family: "Upheavtt";
+                margin-bottom: 24px;
+            }
+
+            i {
                 margin-bottom: 24px;
             }
         }
