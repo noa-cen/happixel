@@ -1,0 +1,266 @@
+/* Color palette */
+/* green 
+:root {
+    --primary: #A9C167;
+    --secondary: #526D66;
+    --tertiary: #2A413A;
+} */
+/* brown
+:root {
+    --primary: #443A30;
+    --secondary: #8B8170;
+    --tertiary: #A9845A;
+}  */
+
+/* blue
+:root {
+    --primary: #1C3349;
+    --secondary: #517589;
+    --tertiary: #467593;
+} */
+
+/* blue/orange */
+:root {
+    --primary: #1B335B;
+    --secondary: #42638A;
+    --tertiary: #D78C35;
+}
+
+/* Font-police:
+font-family: "Upheavtt";
+font-family: "Roboto", serif;
+font-family: "Permanent Marker", serif;
+*/
+@font-face {
+    font-family: "Upheavtt";
+    src: url("fonts/upheavtt.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General */
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+    box-sizing: border-box;
+    /* border: red;
+    border-style: solid; */
+    font-family: "Roboto", serif;
+}
+
+body {
+    background-color: var(--tertiary);
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+header {
+    order: 2;
+    border-top: 2px solid var(--primary);
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 24px;
+        font-size: 30pt;
+
+        i {
+            color: var(--primary);
+        } 
+
+        .dropup-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            width: 99%;
+            height: 95%;
+            position: absolute;
+            top : 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            border-radius: 15px;
+
+            a {
+                color: var(--tertiary);
+                font-family: "Upheavtt";
+                margin-bottom: 24px;
+            }
+        }
+
+        .show {
+            display: flex;
+        }
+    }
+}
+
+main {
+    margin: 16px 24px;
+
+    h2 {
+        font-family: "Upheavtt";
+        margin-bottom: 24px;
+    }
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    gap: 32px;
+
+    h2 {
+        font-size: 32pt;
+    }
+
+    p {
+        margin: 32px 0 8px;
+    }
+
+    .logo {
+        max-width: 300px;
+        align-self: center;
+    }
+
+    .homeMenu {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-size: 50pt;
+    }
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .setUp {
+        display: flex;
+        flex-direction: column;
+        margin: 24px 0 16px;
+
+        input {
+            margin-right: 8px;
+        }
+    
+        label {
+            font-family: "Upheavtt";
+        }
+    }
+
+    #choosePlayerSign {
+        visibility: hidden;
+        flex-direction: row;
+        margin-top: 0;
+        
+        label:first-of-type {
+            margin-right: 24px;
+        }
+    }
+
+    .message {
+        font-size: 20pt;
+        font-family: "Upheavtt";
+        text-align: center;
+    }
+
+    #board {
+        visibility: hidden;
+        order: 2;
+        margin-top: 32px;
+        display: grid;
+        width: 250px;
+        height: 250px;
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+
+        .square {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Permanent Marker", serif;
+            font-size: 40pt;
+        }
+
+        .middle {
+            border-top: 4px solid var(--primary);
+            border-bottom: 4px solid var(--primary);
+        }
+    
+        .center {
+            border-left: 4px solid var(--primary);
+            border-right: 4px solid var(--primary);
+        }
+    }
+
+    .restart {
+        i {
+            transition: all 0.7s ease;
+        }
+    }
+
+    .restart:hover {
+        i {
+            transform: rotateZ(360deg);
+        }
+    }
+}
+
+/* Button */
+.button {
+    background-color: var(--primary);
+    color: var(--tertiary);
+    padding: 8px 16px;
+    border-radius: 15px;
+    align-self: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 24px 0;
+    font-size: 12pt;
+    font-family: "Upheavtt";
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .home {
+        .logo {
+        max-width: 450px;
+        }
+    }
+    
+    .game {
+        #board {
+        min-width: 380px;
+        min-height: 380px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .game {
+        #board {
+            min-width: 425px;
+            min-height: 425px;
+        }
+    }
+}
