@@ -16,8 +16,19 @@ dropupBtnColors.addEventListener("click", dropupColors)
 let colorTogglers = document.querySelectorAll(".fa-brush")
 function changeTheme(event) {
     let color = event.currentTarget.id
+
+    localStorage.setItem("theme", color);
+    document.body.className = ""
     document.body.classList.toggle(color)
 }
+
+window.addEventListener("load", () => {
+    let savedTheme = localStorage.getItem("theme")
+    if (savedTheme) {
+        document.body.classList.add(savedTheme)
+    }
+})
+
 colorTogglers.forEach((toggle) => {
     toggle.addEventListener("click", changeTheme)
 })
