@@ -1,24 +1,24 @@
 function playerPlay() {
     let playerPlay = document.querySelectorAll(".player input")
-    let playerPierre = document.getElementById("playerPierre")
-    let playerFeuille = document.getElementById("playerFeuille")
-    let playerCiseaux = document.getElementById("playerCiseaux")
+    let pierre = document.getElementById("pierre")
+    let feuille = document.getElementById("feuille")
+    let ciseaux = document.getElementById("ciseaux")
 
     playerPlay.forEach((input) => {
         input.addEventListener("change", (event) => {
             play = event.target.value
 
             if (play === "1") {
-                playerFeuille.classList.add("none")
-                playerCiseaux.classList.add("none")
+                feuille.classList.add("none")
+                ciseaux.classList.add("none")
             }
             else if ( play === "2") {
-                playerPierre.classList.add("none")
-                playerCiseaux.classList.add("none")
+                pierre.classList.add("none")
+                ciseaux.classList.add("none")
             }
             else if (play === "3") {
-                playerFeuille.classList.add("none")
-                playerPierre.classList.add("none")
+                feuille.classList.add("none")
+                pierre.classList.add("none")
             }
             computerPlay()
         })
