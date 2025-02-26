@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -25,11 +25,11 @@
 <header>
     <nav class="navbar">
         <ul>
-            <li class="computer"><a href="index.html" aria-label="Accéder à l'accueil">Happixel</a></li>
+            <li class="laptop"><a href="index.html" aria-label="Accéder à l'accueil">Happixel</a></li>
             <li class="phone"><a href="index.html" aria-label="Accéder à l'accueil"><i class="fa-solid fa-house"></i></a></li>
             <li id="dropup-btn-games"><i class="fa-solid fa-gamepad"></i>
                 <article class="dropup-content" id="dropup-games">
-                    <a href="morpion.html" aria-label="Accéder au jeu du morpion">morpion</a>
+                    <a href="tictactoe.html" aria-label="Accéder au jeu du morpion">morpion</a>
                     <a href="shifumi.html" aria-label="Accéder au jeu du shifumi">shifumi</a>
                 </article>
             </li>
@@ -48,13 +48,13 @@
 </header>
 
 <main>
-    <article class="title">
+    <article class="introGame">
         <h2>morpion</h2>
         <p class="rules">Le but du jeu est d’aligner avant son adversaire 3 symboles identiques horizontalement, 
             verticalement ou en diagonale.</p>     
     </article>
 
-    <section class="game">
+    <section class="tictactoe">
         <article class="setUp">
             <article class="gameMode" id="VScomputer">
                 <input type="radio" name="gameMode" id="1player" value="1">
@@ -95,7 +95,7 @@
             <article class="square" id="9"></article>
         </section>
 
-        <button id="restart" class="button none">Recommencer le jeu <i class="fa-solid fa-rotate-right"></i></button>
+        <button id="restart" class="button none">Rejouer <i class="fa-solid fa-rotate-right"></i></button>
     </section>
 </main>
 </body>

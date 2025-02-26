@@ -75,6 +75,34 @@ body {
     max-height: 100vh;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px 0;
+    flex: 1;
+    overflow-y: auto;
+    min-height: calc(100vh - 120px);
+
+    h2 {
+        font-family: "Upheavtt";
+        padding-bottom: 16px;
+    }
+}
+
+/* Button */
+.button {
+    background-color: var(--primary);
+    color: var(--tertiary);
+    padding: 8px 16px;
+    border-radius: 15px;
+    align-self: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12pt;
+    font-family: "Upheavtt";
+}
+
+/* Menu */
 header {
     order: 2;
     border-top: 2px solid var(--primary);
@@ -84,7 +112,7 @@ header {
         overflow: hidden;
     }
 
-    .computer {
+    .laptop {
         display: none;
     }
 
@@ -127,20 +155,7 @@ header {
     }
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    padding: 16px 24px 0;
-    flex: 1;
-    overflow-y: auto;
-    min-height: calc(100vh - 120px);
-
-    h2 {
-        font-family: "Upheavtt";
-        padding-bottom: 16px;
-    }
-}
-
+/* Index page */
 .homeText {
     h2 {
         font-size: 32pt;
@@ -166,7 +181,8 @@ main {
     margin-top: 24px;
 }
 
-.title {
+/* Games pages */
+.introGame {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,7 +197,35 @@ main {
     }
 }
 
-.game {
+.none {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+#restart {
+    i {
+        transition: all 0.7s ease;
+    }
+}
+
+#restart:hover {
+    i {
+        transform: rotateZ(360deg);
+    }
+}
+
+#message {
+    font-size: 20pt;
+    font-family: "Upheavtt";
+    text-align: center;
+    margin: 16px 0;
+}
+
+/* Tic tac toe */
+.tictactoe {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,13 +250,6 @@ main {
         label:first-of-type {
             margin-right: 24px;
         }
-    }
-
-    #message {
-        font-size: 20pt;
-        font-family: "Upheavtt";
-        text-align: center;
-        margin: 16px 0;
     }
 
     #board {
@@ -242,39 +279,40 @@ main {
             border-right: 4px solid var(--primary);
         }
     }
-
-    #restart {
-        i {
-            transition: all 0.7s ease;
-        }
-    }
-
-    #restart:hover {
-        i {
-            transform: rotateZ(360deg);
-        }
-    }
 }
 
-.none {
-    display: none;
-}
-
-.flex {
+/* Shifumi */
+.shifumi {
     display: flex;
-}
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - 400px);
 
-/* Button */
-.button {
-    background-color: var(--primary);
-    color: var(--tertiary);
-    padding: 8px 16px;
-    border-radius: 15px;
-    align-self: center;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 12pt;
-    font-family: "Upheavtt";
+    .player {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+
+        input {
+            margin-right: 8px;
+        }
+
+        label:not(last-of-type) {
+            margin-right: 16px;
+        }
+
+        i {
+            font-size: 40pt;
+        }
+    }
+
+    .computer {
+        .computerPlay {
+            max-width: 300px;
+        }
+    }
 }
 
 /* Media queries */
@@ -293,7 +331,7 @@ main {
         }
     }
     
-    .game {
+    .tictactoe {
         #board {
         min-width: 380px;
         min-height: 380px;
@@ -311,7 +349,7 @@ main {
             display: none;
         }
 
-        .computer {
+        .laptop {
             display: flex;
 
             a {
@@ -366,7 +404,7 @@ main {
         }
     }
 
-    .game {
+    .tictactoe {
         #board {
             min-width: 425px;
             min-height: 425px;

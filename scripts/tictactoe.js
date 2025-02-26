@@ -141,6 +141,7 @@ function randomComputerMove() {
             emptySquares.push(square)
         }
     })
+    
     let i = Math.floor(Math.random() * emptySquares.length)
 
     if (emptySquares.length === 0) {

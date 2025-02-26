@@ -12,12 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+   
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/shifumi.js" defer></script>
     <script src="scripts/script.js" defer></script>
-    <title>Happixel</title>
+    <title>Shifumi</title>
 </head>
+
 <body>
 <header>
     <nav class="navbar">
@@ -45,19 +48,41 @@
 </header>
 
 <main>
-    <section class="homeText">
-        <h2>Bienvenue sur happixel !</h2>
-        <p>Découvrez une collection de mini-jeux captivants et amusez-vous sans limite.</p>
+    <article class="introGame">
+        <h2>shifumi</h2>
+        <p class="rules">La pierre écrase les ciseaux et gagne.<br>
+            Les ciseaux coupent la feuille et gagnent.<br>
+            La feuille enveloppe la pierre et gagne.</p>     
+    </article>
 
-        <article class="homeMenu">
-            <a href="tictactoe.html" aria-label="Accéder au jeu du morpion" 
-            class="button">morpion</a>
-            <a href="shifumi.html" aria-label="Accéder au jeu du shifumi" 
-            class="button">shifumi</a>
+    <section class="shifumi">
+        <article id="message" class="none"></article>
+
+        <article class="player" id="player">
+            <article id="playerPierre">
+                <input type="radio" name="playerPlay" value="1">
+                <label for="playerPierre"><i class="fa-solid fa-hand-fist"></i></label>
+            </article>
+            
+            <article id="playerFeuille">
+                <input type="radio" name="playerPlay" value="2">
+                <label for="playerFeuille"><i class="fa-solid fa-hand"></i></label>
+            </article>
+            
+            <article id="playerCiseaux">
+                <input type="radio" name="playerPlay" value="3">
+                <label for="playerCiseaux"><i class="fa-solid fa-hand-scissors"></i></label>
+            </article>
         </article>
+
+        <article class="computer" id="computer">
+            <img src="assets/img/pierre.png" alt="Happixel qui joue 'pierre'" class="computerPlay none" id="computerPierre">
+            <img src="assets/img/feuille.png" alt="Happixel qui joue 'feuille'" class="computerPlay none" id="computerFeuille">
+            <img src="assets/img/ciseaux.png" alt="Happixel qui joue 'ciseaux'" class="computerPlay none" id="computerCiseaux">
+        </article>
+
+        <button id="restart" class="button none">Rejouer <i class="fa-solid fa-rotate-right"></i></button>
     </section>
-    
-    <img src="assets/img/happixel.png" alt="personnage de Happixel" class="logo">
 </main>
 </body>
 </html>
