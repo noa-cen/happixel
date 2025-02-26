@@ -12,8 +12,8 @@ const wins = [
     [1, 5, 9],
     [3, 5, 7]
 ]
-let message = document.querySelector(".message")
-message.style.visibility = "hidden"
+let message = document.getElementById("message")
+
 let player1Choices = []
 let player2Choices = []
 let currentPlayerChoices = []

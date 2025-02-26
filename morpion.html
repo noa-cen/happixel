@@ -25,11 +25,12 @@
 <header>
     <nav class="navbar">
         <ul>
-            <li><a href="index.html" aria-label="Accéder à l'accueil"><i class="fa-solid fa-house"></i></a></li>
+            <li class="computer"><a href="index.html" aria-label="Accéder à l'accueil">Happixel</a></li>
+            <li class="phone"><a href="index.html" aria-label="Accéder à l'accueil"><i class="fa-solid fa-house"></i></a></li>
             <li id="dropup-btn-games"><i class="fa-solid fa-gamepad"></i>
                 <article class="dropup-content" id="dropup-games">
                     <a href="morpion.html" aria-label="Accéder au jeu du morpion">morpion</a>
-                    <a href="#" aria-label="Accéder au jeu du #">#</a>
+                    <a href="shifumi.html" aria-label="Accéder au jeu du shifumi">shifumi</a>
                 </article>
             </li>
             <li id="dropup-btn-colors"><i class="fa-solid fa-palette"></i>
@@ -47,38 +48,38 @@
 </header>
 
 <main>
-    <article class="rules">
+    <article class="title">
         <h2>morpion</h2>
-        <p>Le but du jeu est d’aligner avant son adversaire 3 symboles identiques horizontalement, 
+        <p class="rules">Le but du jeu est d’aligner avant son adversaire 3 symboles identiques horizontalement, 
             verticalement ou en diagonale.</p>     
     </article>
 
     <section class="game">
         <article class="setUp">
-            <article class="gameMode">
+            <article class="gameMode" id="VScomputer">
                 <input type="radio" name="gameMode" id="1player" value="1">
                 <label for="1player">Jouer contre l'ordinateur</label>
             </article>
 
-            <article class="gameMode">
+            <article class="gameMode" id="VSfriend">
                 <input type="radio" name="gameMode" id="2players" value="2">
                 <label for="2players">2 joueurs</label>
             </article>
         </article>
 
         <article class="setUp none" id="choosePlayerSign">
-            <article class="playerSign">
+            <article class="playerSign" id="Xsign">
                 <input type="radio" name="playerSign" id="X" value="X">
                 <label for="X">Joueur X</label>
             </article>
             
-            <article class="playerSign">
+            <article class="playerSign" id="Osign">
                 <input type="radio" name="playerSign" id="O" value="O">
                 <label for="O">Joueur O</label>
             </article>
         </article>
 
-        <article class="message"></article>
+        <article id="message" class="none"></article>
 
         <section id="board">
             <article class="square" id="1"></article>
@@ -94,7 +95,7 @@
             <article class="square" id="9"></article>
         </section>
 
-        <button class="button restart">Recommencer le jeu <i class="fa-solid fa-rotate-right"></i></button>
+        <button id="restart" class="button none">Recommencer le jeu <i class="fa-solid fa-rotate-right"></i></button>
     </section>
 </main>
 </body>

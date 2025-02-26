@@ -73,15 +73,14 @@ body {
     flex-direction: column;
     justify-content: space-between;
     max-height: 100vh;
-    overflow: hidden;
 }
 
 header {
     order: 2;
     border-top: 2px solid var(--primary);
+    height: 60px;
 
     .navbar {
-        max-height: 60px;
         overflow: hidden;
     }
 
@@ -108,7 +107,7 @@ header {
             gap: 16px;
             background-color: var(--primary);
             width: 99%;
-            height: calc(100vh - 64px);
+            height: calc(100vh - 130px);
             position: absolute;
             top: 2px;
             left: 50%;
@@ -134,7 +133,7 @@ main {
     padding: 16px 24px 0;
     flex: 1;
     overflow-y: auto;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 120px);
 
     h2 {
         font-family: "Upheavtt";
@@ -142,13 +141,7 @@ main {
     }
 }
 
-.home {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    flex-grow: 1;
-
+.homeText {
     h2 {
         font-size: 32pt;
     }
@@ -157,22 +150,23 @@ main {
         padding-top: 8px;
     }
 
-    .logo {
-        max-height: 300px;
-        align-self: center;
-        padding: 16px;
-        margin-top: auto;
-    }
-
     .homeMenu {
         display: none;
         justify-content: center;
         align-items: center;
         gap: 24px;
+        padding-top: 16px;
     }
 }
 
-.rules {
+.logo {
+    max-height: 300px;
+    align-self: center;
+    padding: 16px;
+    margin-top: 24px;
+}
+
+.title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,6 +174,10 @@ main {
 
     h2 {
         font-size: 50pt;
+    }
+
+    p {
+        margin-bottom: 16px;
     }
 }
 
@@ -190,9 +188,7 @@ main {
     align-items: center;
 
     .setUp {
-        display: flex;
         flex-direction: column;
-        margin: 24px 0 16px;
 
         input {
             margin-right: 8px;
@@ -204,7 +200,6 @@ main {
     }
 
     #choosePlayerSign {
-        visibility: hidden;
         flex-direction: row;
         margin-top: 0;
         
@@ -213,17 +208,18 @@ main {
         }
     }
 
-    .message {
+    #message {
         font-size: 20pt;
         font-family: "Upheavtt";
         text-align: center;
+        margin: 16px 0;
     }
 
     #board {
         visibility: hidden;
         order: 2;
-        margin-top: 32px;
         display: grid;
+        margin-top: 16px;
         width: 250px;
         height: 250px;
         grid-template: repeat(3, 1fr) / repeat(3, 1fr);
@@ -247,17 +243,25 @@ main {
         }
     }
 
-    .restart {
+    #restart {
         i {
             transition: all 0.7s ease;
         }
     }
 
-    .restart:hover {
+    #restart:hover {
         i {
             transform: rotateZ(360deg);
         }
     }
+}
+
+.none {
+    display: none;
+}
+
+.flex {
+    display: flex;
 }
 
 /* Button */
@@ -269,7 +273,6 @@ main {
     align-self: center;
     font-weight: bold;
     cursor: pointer;
-    margin: 16px 0;
     font-size: 12pt;
     font-family: "Upheavtt";
 }
@@ -329,7 +332,7 @@ main {
             } 
     
             .dropup-content {
-                top: 64px;
+                top: 63px;
             }
         }
     }
