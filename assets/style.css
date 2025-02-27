@@ -297,7 +297,7 @@ header {
     justify-content: space-between;
     align-items: center;
     min-height: calc(100vh - 400px);
-    margin-top: 24px;
+    margin: 16px 0;
 
     .player {
         display: flex;
