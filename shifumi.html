@@ -56,8 +56,6 @@
     </article>
 
     <section class="shifumi">
-        <article id="message" class="none"></article>
-
         <article class="player" id="player">
             <article id="pierre">
                 <input type="radio" name="playerPlay" id="playerPierre" value="1">
@@ -76,11 +74,17 @@
         </article>
 
         <article class="computer" id="computer">
+            <img src="assets/img/happixel.png" alt="Happixel prêt à jouer" id="happixel">
+
             <img src="assets/img/pierre.png" alt="Happixel qui joue 'pierre'" class="computerPlay none" id="computerPierre">
             <img src="assets/img/feuille.png" alt="Happixel qui joue 'feuille'" class="computerPlay none" id="computerFeuille">
             <img src="assets/img/ciseaux.png" alt="Happixel qui joue 'ciseaux'" class="computerPlay none" id="computerCiseaux">
         </article>
 
+        <article id="message" class="none"></article>
+        <article id="score" class="none"></article>
+        
+        <button id="nextGame" class="button none">Manche suivante <i class="fa-solid fa-forward"></i></button>
         <button id="restart" class="button none">Rejouer <i class="fa-solid fa-rotate-right"></i></button>
     </section>
 </main>

@@ -1,3 +1,9 @@
+let play = ""
+let turns = parseInt(localStorage.getItem("turns")) || 0
+
+let nextGameBtn = document.getElementById("nextGame")
+let restartBtn = document.getElementById("restart")
+
 function playerPlay() {
     let playerPlay = document.querySelectorAll(".player input")
     let pierre = document.getElementById("pierre")
@@ -27,48 +33,147 @@ function playerPlay() {
 
 function computerPlay() {
     let computerPlay = document.querySelectorAll(".computerPlay")
+    let happixel = document.getElementById("happixel")
     let random = Math.floor(Math.random() * computerPlay.length)
 
     computerPlay[random].classList.remove("none")
     computerPlay[random].classList.add("flex")
+    happixel.classList.add("none")
     
     checkDraw(random)
-    checkWin(random)
 }
 
 function checkDraw(random) {
-    if (play == (random + 1)) {
-        message.innerHTML = "Match nul !"
+    let playerChoice = parseInt(play)
+
+
+    if (playerChoice === random + 1) {
+        let scorePlayer = parseInt(localStorage.getItem("scorePlayer"))
+        let scoreComputer = parseInt(localStorage.getItem("scoreComputer"))
+
+        message.innerHTML = `Toi: ${scorePlayer} Happixel: ${scoreComputer}`
         message.classList.remove("none")
         message.classList.add("flex")
-        restart()
+
+        turns += 1
+        localStorage.setItem("turns", turns)
+
+        if (parseInt(localStorage.getItem("turns")) === 3) {
+            checkScore()
+        }
+        else {
+            nextGame()
+        }
+    }
+    else {
+        checkWin(random)
     }
 }
 
 function checkWin(random) {
-    const playerChoice = parseInt(play)
+    let playerChoice = parseInt(play)
 
     if (playerChoice === 1 && (random + 1) === 3 || playerChoice === 2 && (random + 1) === 1 || playerChoice === 3 && (random + 1) === 2) {
-        message.innerHTML = "Bravo, tu as gagné !"
+        let scorePlayer = parseInt(localStorage.getItem("scorePlayer"))
+        scorePlayer += 1
+        localStorage.setItem("scorePlayer", scorePlayer)
+        let scoreComputer = parseInt(localStorage.getItem("scoreComputer"))
+
+        message.innerHTML = `Toi: ${scorePlayer} Happixel: ${scoreComputer}`
         message.classList.remove("none")
         message.classList.add("flex")
-        restart()
+
+        turns += 1
+        localStorage.setItem("turns", turns)
     }
+    
     else if (playerChoice === 1 && (random + 1) === 2 || playerChoice === 2 && (random + 1) === 3 || playerChoice === 3 && (random + 1) === 1) {
-        message.innerHTML = "J'ai gagné !"
+        let scoreComputer = parseInt(localStorage.getItem("scoreComputer"))
+        scoreComputer += 1
+        localStorage.setItem("scoreComputer", scoreComputer)
+        let scorePlayer = parseInt(localStorage.getItem("scorePlayer"))
+
+        message.innerHTML = `Toi: ${scorePlayer} Happixel: ${scoreComputer}`
         message.classList.remove("none")
         message.classList.add("flex")
-        restart()
+
+        turns += 1
+        localStorage.setItem("turns", turns)
+    }
+
+    if (parseInt(localStorage.getItem("turns")) === 3) {
+        checkScore()
+    }
+    else {
+        nextGame()
     }
 }
 
+function checkScore() {
+    let scorePlayer = parseInt(localStorage.getItem("scorePlayer"))
+    let scoreComputer = parseInt(localStorage.getItem("scoreComputer"))
+
+    if (scorePlayer > scoreComputer) {
+        message.innerHTML = `Bravo, tu as gagné: ${scorePlayer} à ${scoreComputer} !`
+    }
+
+    else if (scorePlayer < scoreComputer) {
+        message.innerHTML = `Happixel a gagné: ${scoreComputer} à ${scorePlayer}.`
+    }
+
+    else {
+        message.innerHTML = `Égalité: ${scorePlayer} à ${scoreComputer}.` 
+    }
+
+    score.classList.remove("flex")
+    score.classList.add("none")
+
+    message.classList.remove("none")
+    message.classList.add("flex")
+
+    restart()
+}
+
+function nextGame() {
+    nextGameBtn.classList.remove("none")
+    nextGameBtn.classList.add("block")
+
+    nextGameBtn.removeEventListener("click", reloadGame)
+    nextGameBtn.addEventListener("click", reloadGame)
+}
+
+function reloadGame() {
+    location.reload()
+}
+
 function restart() {
-    let restart = document.getElementById("restart")
-    restart.classList.remove("none")
-    restart.classList.add("block")
-    restart.addEventListener("click", () => {
+    localStorage.removeItem("scoreComputer")
+    localStorage.removeItem("scorePlayer")
+    localStorage.removeItem("turns")
+
+    nextGameBtn.classList.remove("block")
+    nextGameBtn.classList.add("none")
+
+    restartBtn.classList.remove("none")
+    restartBtn.classList.add("block")
+
+    restartBtn.addEventListener("click", () => {
         location.reload()
     })
 }
 
-playerPlay()
+function playGame() {
+    if (!localStorage.getItem("scorePlayer")) {
+        localStorage.setItem("scorePlayer", 0)
+        localStorage.setItem("scoreComputer", 0)
+    }
+
+    if (!localStorage.getItem("turns")) {
+        localStorage.setItem("turns", 0)
+    }
+    
+    turns = parseInt(localStorage.getItem("turns"))
+    playerPlay()
+}
+
+playGame()

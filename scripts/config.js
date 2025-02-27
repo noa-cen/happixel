@@ -14,11 +14,14 @@ const wins = [
     [1, 5, 9],
     [3, 5, 7]
 ]
-let message = document.getElementById("message")
-
 let player1Choices = []
 let player2Choices = []
 let currentPlayerChoices = []
 let squares = document.querySelectorAll("#board .square")
 let gameOver = false
 let countTurns = 0
+
+// Tictactoe and Shifumi
+let message = document.getElementById("message")
+
+// Shifumi

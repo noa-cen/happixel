@@ -78,7 +78,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    padding: 16px 24px 0;
+    padding: 16px 8px 0;
     flex: 1;
     overflow-y: auto;
     min-height: calc(100vh - 120px);
@@ -100,6 +100,27 @@ main {
     cursor: pointer;
     font-size: 12pt;
     font-family: "Upheavtt";
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#restart, #nextGame {
+    i {
+        transition: all 0.7s ease;
+    }
+}
+
+#restart:hover {
+    i {
+        transform: rotateZ(360deg);
+    }
+}
+
+#nextGame:hover {
+    i {
+        transform: translateX(10px);
+    }
 }
 
 /* Menu */
@@ -205,18 +226,6 @@ header {
     display: flex;
 }
 
-#restart {
-    i {
-        transition: all 0.7s ease;
-    }
-}
-
-#restart:hover {
-    i {
-        transform: rotateZ(360deg);
-    }
-}
-
 #message {
     font-size: 20pt;
     font-family: "Upheavtt";
@@ -288,19 +297,16 @@ header {
     justify-content: space-between;
     align-items: center;
     min-height: calc(100vh - 400px);
+    margin-top: 24px;
 
     .player {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        margin-top: 40px;
+        gap: 24px;
 
         input {
-            margin-right: 8px;
-        }
-
-        label:not(last-of-type) {
-            margin-right: 16px;
+            display: none;
         }
 
         i {
@@ -309,7 +315,9 @@ header {
     }
 
     .computer {
-        .computerPlay {
+        margin-top: 16px;
+
+        .computerPlay, #happixel {
             max-width: 300px;
         }
     }
