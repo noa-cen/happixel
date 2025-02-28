@@ -83,7 +83,7 @@ main {
     overflow-y: auto;
     min-height: calc(100vh - 120px);
 
-    h2 {
+    h1 {
         font-family: "Upheavtt";
         padding-bottom: 16px;
     }
@@ -178,7 +178,7 @@ header {
 
 /* Index page */
 .homeText {
-    h2 {
+    h1 {
         font-size: 32pt;
     }
 
@@ -209,7 +209,7 @@ header {
     justify-content: center;
     align-items: center;
 
-    h2 {
+    h1 {
         font-size: 50pt;
     }
 
@@ -393,7 +393,7 @@ header {
         flex-direction: row;
         align-items: center;
     
-        h2 {
+        h1 {
             font-size: 45pt;
         }
     
