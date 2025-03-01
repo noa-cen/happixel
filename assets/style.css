@@ -72,7 +72,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-height: 100vh;
+    max-height: 100svh;
 }
 
 main {
@@ -81,7 +81,7 @@ main {
     padding: 16px 8px 0;
     flex: 1;
     overflow-y: auto;
-    min-height: calc(100vh - 120px);
+    min-height: calc(100svh - 60px);
 
     h1 {
         font-family: "Upheavtt";
@@ -156,7 +156,7 @@ header {
             gap: 16px;
             background-color: var(--primary);
             width: 99%;
-            height: calc(100vh - 130px);
+            height: calc(100svh - 65px);
             position: absolute;
             top: 2px;
             left: 50%;
@@ -317,7 +317,11 @@ header {
     .computer {
         margin-top: 16px;
 
-        .computerPlay, #happixel {
+        #happixel {
+            max-width: 250px;
+        }
+        
+        .computerPlay {
             max-width: 300px;
         }
     }
