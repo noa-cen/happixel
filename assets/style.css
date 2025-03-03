@@ -106,6 +106,8 @@ main {
 }
 
 #restart, #nextGame {
+    margin-bottom: 16px;
+    
     i {
         transition: all 0.7s ease;
     }

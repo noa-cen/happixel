@@ -162,46 +162,48 @@ function turnGame(event) {
 
     let square = event.target;
 
-    if (currentPlayer === player1) {
-        square.innerHTML = player1
-        player1Choices.push(Number(square.id))
-        if (checkWin(player1Choices, player1)) {
-            gameOver = true
-            restart()
-            return
-        }
-    } else {
-        square.innerHTML = player2
-        player2Choices.push(Number(square.id))
-        if (checkWin(player2Choices, player2)) {
-            gameOver = true
-            restart()
-            return
-        }
-    }
-
-    countTurns++
-    if (checkDraw(countTurns)) {
-        gameOver = true
-        restart()
-        return
-    }
-
-    if (gameMode === "1") {
-        currentPlayer = player2;
-        message.innerHTML = `Joueur: ${player2}`;
-        setTimeout(() => {
-            if (!gameOver) {
-                computerPlay();
-            }
-        }, 500);
-    } else {
+    if (square.textContent === "") {
         if (currentPlayer === player1) {
-            currentPlayer = player2;
-            message.innerHTML = `Joueur: ${player2}`
+            square.innerHTML = player1
+            player1Choices.push(Number(square.id))
+            if (checkWin(player1Choices, player1)) {
+                gameOver = true
+                restart()
+                return
+            }
         } else {
-            currentPlayer = player1;
-            message.innerHTML = `Joueur: ${player1}`
+            square.innerHTML = player2
+            player2Choices.push(Number(square.id))
+            if (checkWin(player2Choices, player2)) {
+                gameOver = true
+                restart()
+                return
+            }
+        }
+    
+        countTurns++
+        if (checkDraw(countTurns)) {
+            gameOver = true
+            restart()
+            return
+        }
+    
+        if (gameMode === "1") {
+            currentPlayer = player2;
+            message.innerHTML = `Joueur: ${player2}`;
+            setTimeout(() => {
+                if (!gameOver) {
+                    computerPlay();
+                }
+            }, 500);
+        } else {
+            if (currentPlayer === player1) {
+                currentPlayer = player2;
+                message.innerHTML = `Joueur: ${player2}`
+            } else {
+                currentPlayer = player1;
+                message.innerHTML = `Joueur: ${player1}`
+            }
         }
     }
 }
