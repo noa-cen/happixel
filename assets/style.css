@@ -296,7 +296,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-height: calc(100vh - 400px);
+    min-height: calc(100svh - 400px);
     margin: 16px 0;
 
     .player {
@@ -322,7 +322,7 @@ header {
         }
         
         .computerPlay {
-            max-width: 300px;
+            max-width: 200px;
         }
     }
 }
