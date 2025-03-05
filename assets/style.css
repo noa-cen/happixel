@@ -329,6 +329,22 @@ header {
     }
 }
 
+/* Pendu */
+.hangman {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .lifes {
+        max-height: 40svh;
+    }
+
+    .word {
+        font-size: 30pt;
+    }
+}
+
 /* Footer */
 .copyright {
     display: flex;
