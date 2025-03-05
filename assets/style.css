@@ -329,6 +329,27 @@ header {
     }
 }
 
+/* Footer */
+.copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0 8px;
+
+    p {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    img {
+        max-height: 30px;
+        margin-left: 8px;
+    }
+}
+
 /* Media queries */
 @media (min-width: 375px) {
     .home {
@@ -428,6 +449,10 @@ header {
     .button {
         margin: 32px 0;
         font-size: 20pt;
+    }
+
+    footer {
+        order: 3;
     }
 }
 
