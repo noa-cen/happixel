@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Noa Cengarle">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/ecde10fa93.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/shifumi.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <title>Pendu</title>
+</head>
+
+<body>
+<header>
+    <nav class="navbar">
+        <ul>
+            <li class="laptop"><a href="index.html" aria-label="Accéder à l'accueil">Happixel</a></li>
+            <li class="phone"><a href="index.html" aria-label="Accéder à l'accueil"><i class="fa-solid fa-house"></i></a></li>
+            <li id="dropup-btn-games"><i class="fa-solid fa-gamepad"></i>
+                <article class="dropup-content" id="dropup-games">
+                    <a href="tictactoe.html" aria-label="Accéder au jeu du morpion">morpion</a>
+                    <a href="shifumi.html" aria-label="Accéder au jeu du shifumi">shifumi</a>
+                    <a href="hangman.html" aria-label="Accéder au jeu du pendu">pendu</a>
+                </article>
+            </li>
+            <li id="dropup-btn-colors"><i class="fa-solid fa-palette"></i>
+                <article class="dropup-content" id="dropup-colors">
+                    <i class="fa-solid fa-brush" style="color: #D78C35;" id="orange"></i>
+                    <i class="fa-solid fa-brush" style="color: #9FCA5F;" id="green"></i>
+                    <i class="fa-solid fa-brush" style="color: #B2A38C;" id="brown"></i>
+                    <i class="fa-solid fa-brush" style="color: #1991C8;" id="blue"></i>
+                    <i class="fa-solid fa-brush" style="color: #EAEAEA;" id="white"></i>
+                    <i class="fa-solid fa-brush" style="color: #132425;" id="dark"></i>
+                </article>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <article class="introGame">
+        <h1>hangman</h1>
+        <p class="rules">Le but du jeu est de trouver le mot choisit par Happixel en devinant 
+            les lettres qui le composent.</p>     
+    </article>
+
+    <section class="hangman">
+        <img src="assets/img/happixel.png" alt="Happixel prêt à jouer" id="happixel">
+    </section>
+
+</main>
+
+<footer>
+    <section class="copyright">
+        <p>© Copyright 2025 | Noa Cengarle | Tous droits réservés</p>
+    </section>
+</footer>
+
+</body>
+</html>
