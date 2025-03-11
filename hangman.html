@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <script src="scripts/config.js" defer></script>
-    <script src="scripts/shifumi.js" defer></script>
+    <script src="scripts/hangman.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <title>Pendu</title>
 </head>
@@ -67,12 +67,13 @@
             <img src="assets/img/hangman/7.png" alt="Potence, corde, tête, corps, jambes et bras" 
             class="lifes none" id="7">
             <img src="assets/img/hangman/8.png" alt="Potence, corde, tête, corps, jambes, bras et visage" 
-            class="lifes" id="8">
+            class="lifes none" id="8">
         </article>
 
         <article class="word">
-            <p></p>
-            <p>_ _ _</p>
+            <p class="wordToGuess"></p>
+            <input type="text" size="1" maxlength="1" id="letter" name="letter" class="letter">
+            <button type="submit">Entrer</button>
         </article>
     </section>
 </main>

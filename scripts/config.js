@@ -25,3 +25,8 @@ let countTurns = 0
 let message = document.getElementById("message")
 
 // Shifumi
+let play = ""
+let turns = parseInt(localStorage.getItem("turns")) || 0
+
+let nextGameBtn = document.getElementById("nextGame")
+let restartBtn = document.getElementById("restart")
