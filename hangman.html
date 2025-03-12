@@ -55,8 +55,11 @@
             les lettres qui le composent.</p>     
     </article>
 
+    <article id="message" class="none"></article>
+
     <section class="hangman">
         <article class="hangmanLifes">
+            <img src="assets/img/hangman/0.png" alt="Happixel derrière un buisson" class="lifes" id="0">
             <img src="assets/img/hangman/1.png" alt="Première étape de la potence" class="lifes none" id="1">
             <img src="assets/img/hangman/2.png" alt="Deuxième étape de la potence" class="lifes none" id="2">
             <img src="assets/img/hangman/3.png" alt="Potence et corde" class="lifes none" id="3">
@@ -72,10 +75,45 @@
 
         <article class="word">
             <p class="wordToGuess"></p>
-            <input type="text" size="1" maxlength="1" id="letter" name="letter" class="letter">
-            <button type="submit">Entrer</button>
         </article>
+
+        <section class="keyboard">
+            <article class="rang">
+                <article class="letter" id="a">a</article>
+                <article class="letter" id="z">z</article>
+                <article class="letter" id="e">e</article>
+                <article class="letter" id="r">r</article>
+                <article class="letter" id="t">t</article>
+                <article class="letter" id="y">y</article>
+                <article class="letter" id="u">u</article>
+                <article class="letter" id="i">i</article>
+                <article class="letter" id="o">o</article>
+                <article class="letter" id="p">p</article>
+            </article>
+            <article class="rang">
+                <article class="letter" id="q">q</article>
+                <article class="letter" id="s">s</article>
+                <article class="letter" id="d">d</article>
+                <article class="letter" id="f">f</article>
+                <article class="letter" id="g">g</article>
+                <article class="letter" id="h">h</article>
+                <article class="letter" id="j">j</article>
+                <article class="letter" id="k">k</article>
+                <article class="letter" id="l">l</article>
+                <article class="letter" id="m">m</article>
+            </article>
+            <article class="rang">
+                <article class="letter" id="w">w</article>
+                <article class="letter" id="x">x</article>
+                <article class="letter" id="c">c</article>
+                <article class="letter" id="v">v</article>
+                <article class="letter" id="b">b</article>
+                <article class="letter" id="n">n</article>
+            </article>
+        </section>
     </section>
+
+    <button id="restart" class="button none">Rejouer <i class="fa-solid fa-rotate-right"></i></button>
 </main>
 
 <footer>

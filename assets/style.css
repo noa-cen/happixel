@@ -338,11 +338,41 @@ header {
 
     .lifes {
         max-height: 40svh;
+        margin-bottom: 16px;
     }
 
     .word {
         font-size: 30pt;
     }
+
+    .keyboard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        border: 2px solid var(--primary);
+        border-radius: 5px;
+        gap: 4px;
+        margin: 24px;
+    }
+
+    .rang {
+        display: flex;
+        gap: 4px;
+    }
+
+    .rang * {
+        border: 1px solid var(--primary);
+        border-radius: 4px;
+        padding: 4px 8px;
+    }
+
+    .letter.disabled {
+        background-color: var(--secondary);
+        pointer-events: none;
+    }
+    
 }
 
 /* Footer */
