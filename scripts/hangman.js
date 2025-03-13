@@ -24,7 +24,9 @@ function checkLetter(event) {
         wordToGuess.innerHTML = displayedWord.join(" ");
 
         if (!wordToGuess.innerHTML.includes("_")) {
-            setTimeout(() => alert("Bravo ! Vous avez gagné !"), 100);
+            message.innerHTML = "Bravo ! Vous avez gagné !";
+            message.classList.remove("none");
+            message.classList.add("flex");
             restart();
             return;
         }
@@ -36,7 +38,9 @@ function checkLetter(event) {
             hangmanLifes[nbLifes].classList.remove("none");
         }
         if (nbLifes === hangmanLifes.length - 1) {
-            setTimeout(() => alert(`Dommage ! Le mot était "${word}".`), 100);
+            message.innerHTML = `Dommage ! Le mot était "${word}".`;
+            message.classList.remove("none");
+            message.classList.add("flex");
             restart();
             return;
         }      
@@ -65,5 +69,9 @@ function playHangman() {
 
     chooseWord();
 }
+
+letters.forEach(letter => {
+    letter.addEventListener("click", checkLetter);
+});
 
 playHangman();

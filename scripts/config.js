@@ -1,3 +1,6 @@
+// All games
+let message = document.getElementById("message")
+
 // Tictactoe
 let gameMode = ""
 let currentPlayer = ""
@@ -19,9 +22,6 @@ let currentPlayerChoices = []
 let squares = document.querySelectorAll("#board .square")
 let gameOver = false
 let countTurns = 0
-
-// Tictactoe and Shifumi
-let message = document.getElementById("message")
 
 // Shifumi
 let play = ""
@@ -64,6 +64,3 @@ let wordToGuess = document.querySelector(".wordToGuess");
 let word;
 let nbLifes = 0;
 let letters = document.querySelectorAll(".letter");
-letters.forEach(letter => {
-    letter.addEventListener("click", checkLetter);
-});
