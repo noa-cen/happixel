@@ -61,6 +61,6 @@ let wordList = [
 
 let hangmanLifes = document.querySelectorAll(".lifes");
 let wordToGuess = document.querySelector(".wordToGuess");
-let word;
+let wordWithoutAccent;
 let nbLifes = 0;
 let letters = document.querySelectorAll(".letter");

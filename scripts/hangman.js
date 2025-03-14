@@ -1,10 +1,16 @@
+function strNoAccent(a) {
+    return a.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+  
 function chooseWord() {
     let i = Math.floor(Math.random() * wordList.length);
-    word = wordList[i];
+    let word = wordList[i].toUpperCase();
+    wordWithoutAccent = strNoAccent(word);
+    wordToGuess.innerHTML = wordWithoutAccent.charAt(0);
+    console.log(wordWithoutAccent);
 
-    wordToGuess.innerHTML = word.charAt(0);
-
-    for (let x = 1; x < word.length; x++) {
+    for (let x = 1; x < wordWithoutAccent.length; x++) {
         wordToGuess.innerHTML += " _";
     }
 }
@@ -14,11 +20,11 @@ function checkLetter(event) {
 
     event.target.classList.add("disabled");
 
-    if (word.toLowerCase().includes(id)) {
+    if (wordWithoutAccent.toLowerCase().includes(id)) {
         let displayedWord = wordToGuess.innerHTML.split(" ");
-        for (let i = 0; i < word.length; i++) {
-            if (word[i].toLowerCase() === id) {
-                displayedWord[i] = word[i];
+        for (let i = 0; i < wordWithoutAccent.length; i++) {
+            if (wordWithoutAccent[i].toLowerCase() === id) {
+                displayedWord[i] = wordWithoutAccent[i];
             }
         }
         wordToGuess.innerHTML = displayedWord.join(" ");
@@ -38,7 +44,7 @@ function checkLetter(event) {
             hangmanLifes[nbLifes].classList.remove("none");
         }
         if (nbLifes === hangmanLifes.length - 1) {
-            message.innerHTML = `Dommage ! Le mot était "${word}".`;
+            message.innerHTML = `Dommage ! Le mot était "${wordWithoutAccent}".`;
             message.classList.remove("none");
             message.classList.add("flex");
             restart();

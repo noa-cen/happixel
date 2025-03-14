@@ -355,6 +355,7 @@ header {
         border-radius: 5px;
         gap: 4px;
         margin: 24px;
+        text-transform: uppercase;
     }
 
     .rang {
